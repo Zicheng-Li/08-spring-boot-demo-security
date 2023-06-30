@@ -20,18 +20,24 @@
 
 
 
+
+<div sec:authorize="hasRole('MANAGER')">
+    <!-- this will only display for manager-->
+    <p>
+        <a th:href="@{/leaders}">Leadership Meeting</a>
+        (only available for managers)
+    </p>
+</div>
+
 <hr>
 
-<p>
-    <a th:href="@{/leaders}">Leadership Meeting</a>
-    (only available for managers)
-</p>
-<hr>
+<div sec:authorize="hasRole('ADMIN')">
+    <p>
+        <a th:href="@{/systems}">IT system Meeting</a>
+        (only available for admin peeps)
+    </p>
+</div>
 
-<p>
-    <a th:href="@{/systems}">IT system Meeting</a>
-    (only available for admin peeps)
-</p>
 
  <!-- add the logout-->
 
